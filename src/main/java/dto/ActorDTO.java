@@ -1,16 +1,30 @@
 package dto;
 
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class ActorDTO {
-    ArrayList<String> first_nameDTO = new ArrayList<String>();
-    ArrayList<String> last_nameDTO = new ArrayList<String>();
-    ArrayList<Integer> actorIDDTO = new ArrayList<Integer>();
-    ArrayList<Date> lastUpdateDDTO = new ArrayList<Date>();
+    private ArrayList<Short> actor_idDTO = new ArrayList<>();
+    private ArrayList<String> first_nameDTO = new ArrayList<String>();
+    private ArrayList<String> last_nameDTO = new ArrayList<String>();
+    private ArrayList<Timestamp> last_updateDTO = new ArrayList<Timestamp>();
 
-    public ActorDTO() {
+    public ArrayList<Short> getActor_idDTO() {
+        return actor_idDTO;
+    }
+
+    public void setActor_idDTO(ArrayList<Short> actor_idDTO) {
+        this.actor_idDTO = actor_idDTO;
+    }
+
+    public ArrayList<String> getFirst_nameDTO() {
+        return first_nameDTO;
+    }
+
+    public void setFirst_nameDTO(ArrayList<String> first_nameDTO) {
+        this.first_nameDTO = first_nameDTO;
     }
 
     public ArrayList<String> getLast_nameDTO() {
@@ -21,27 +35,11 @@ public class ActorDTO {
         this.last_nameDTO = last_nameDTO;
     }
 
-    public ArrayList<Integer> getActorIDDTO() {
-        return actorIDDTO;
+    public ArrayList<Timestamp> getLast_updateDTO() {
+        return last_updateDTO;
     }
 
-    public void setActorIDDTO(ArrayList<Integer> actorIDDTO) {
-        this.actorIDDTO = actorIDDTO;
-    }
-
-    public ArrayList<Date> getLastUpdateDDTO() {
-        return lastUpdateDDTO;
-    }
-
-    public void setLastUpdateDDTO(ArrayList<Date> lastUpdateDDTO) {
-        this.lastUpdateDDTO = lastUpdateDDTO;
-    }
-
-    public ArrayList<String> getFirst_nameDTO() {
-        return first_nameDTO;
-    }
-
-    public void setFirst_nameDTO(ArrayList<String> first_nameDTO) {
-        this.first_nameDTO = first_nameDTO;
+    public void setLast_updateDTO(ArrayList<Timestamp> last_updateDTO) {
+        this.last_updateDTO = last_updateDTO;
     }
 }
