@@ -50,9 +50,7 @@ public class Connection {
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } /*finally {
-            closeConnection();
-        }*/
+        }
         switch (field) {
             case "actor_id":
                 return actor_id;
@@ -65,7 +63,39 @@ public class Connection {
             default:
                 return null;
         }
-        //return first_name;
+
+    }
+
+    public ArrayList consultFilm_Actor(String field){
+
+        ArrayList<Short> actor_id = new ArrayList<>();
+        ArrayList<Short> film_id = new ArrayList<>();
+        ArrayList<Timestamp> last_update = new ArrayList<Timestamp>();
+
+        try {
+            statement = connection.createStatement();
+            statement.setQueryTimeout(50);
+            rs = statement.executeQuery("select * from film_actor");
+
+            while (rs.next()) {
+                actor_id.add(rs.getShort("actor_id"));
+                film_id.add(rs.getShort("film_id"));
+                last_update.add(rs.getTimestamp("last_update"));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        switch (field) {
+            case "actor_id":
+                return actor_id;
+            case "film_id":
+                return film_id;
+            case "last_update":
+                return last_update;
+            default:
+                return null;
+        }
+
     }
 
 
